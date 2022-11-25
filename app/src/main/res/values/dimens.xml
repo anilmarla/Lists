@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textsize_medium">14sp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="margin_top">24sp</dimen>
+    <dimen name="default_gap_padding">16dp</dimen>
+    <dimen name="corner_radius">10dp</dimen>
+    <dimen name="card_padding">26sp</dimen>
+    <dimen name="default_padding_double">32dp</dimen>
+    <dimen name="proficpic_name">12dp</dimen>
+    <dimen name="grid_margin">8dp</dimen>
+</resources>
