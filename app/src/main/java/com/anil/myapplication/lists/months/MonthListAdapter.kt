@@ -26,6 +26,8 @@ class MonthListAdapter(val listener: MonthListAdapterListener) : ListAdapter<Mon
                 listener.onCardClicked(month, position)
             }
 
+
+
             binding.name.setOnClickListener {
                 listener.onTitleClicked()
             }

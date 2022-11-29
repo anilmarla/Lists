@@ -1,6 +1,5 @@
 package com.anil.myapplication.lists.crypto
 
-import CryptoListAdapter
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

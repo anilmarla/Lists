@@ -17,6 +17,15 @@ class MonthListActivity : AppCompatActivity(), MonthListAdapterListener {
         binding = ActivityMonthListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        renderList()
+    }
+
+    /**
+     * Rendering list view
+     * Initializing adapter
+     * Rendering list of months
+     * */
+    private fun renderList() {
         adapter = MonthListAdapter(this)
 
         binding.recyclerview.adapter = adapter
@@ -29,6 +38,33 @@ class MonthListActivity : AppCompatActivity(), MonthListAdapterListener {
             MarginItemDecoration(resources.getDimensionPixelSize(R.dimen.grid_margin), 2)
         )
 
+        adapter.submitList(getMonths())
+    }
+
+    override fun onCardClicked(month: Month, position: Int) {
+        Toast.makeText(this, "This month is ${month.name}, position: $position", Toast.LENGTH_SHORT)
+            .show()
+
+
+//        val months = mutableListOf<Month>()
+//
+//        months.add(
+//            Month(
+//                "January",
+//                "https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547__340.jpg"
+//            )
+//        )
+//        months.add(
+//            Month(
+//                "February",
+//                "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832__340.jpg"
+//            )
+//        )
+//
+//        adapter.submitList(months)
+    }
+
+    private fun getMonths(): List<Month> {
         val months = mutableListOf<Month>()
 
         months.add(
@@ -104,31 +140,14 @@ class MonthListActivity : AppCompatActivity(), MonthListAdapterListener {
             )
         )
 
-        adapter.submitList(months)
+        return months
     }
 
-    override fun onCardClicked(month: Month, position: Int) {
-        Toast.makeText(this, "This month is ${month.name}, position: $position",Toast.LENGTH_SHORT).show()
 
-//        val months = mutableListOf<Month>()
-//
-//        months.add(
-//            Month(
-//                "January",
-//                "https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547__340.jpg"
-//            )
-//        )
-//        months.add(
-//            Month(
-//                "February",
-//                "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832__340.jpg"
-//            )
-//        )
-//
-//        adapter.submitList(months)
-    }
 
     override fun onTitleClicked() {
+
+
         Toast.makeText(this, "On title clicked", Toast.LENGTH_SHORT).show()
     }
 }
